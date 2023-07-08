@@ -21,7 +21,7 @@ spec:
         helm:
           releaseName: '{{ env }}'
           valueFiles:
-            - '../values/{{ app }}/values-{{ env }}.yaml'
+            - '../../values/{{ app }}/values-{{ env }}.yaml'
       destination:
         server: https://kubernetes.default.svc
         namespace: '{{ app }}'
