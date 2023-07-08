@@ -1,5 +1,11 @@
 ---
 repos:
+  - repo: local
+    hooks:
+      - id: helm-template
+        name: helm-template
+        entry: ./sh/output-helm-templates.sh
+        language: script
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.1.0
     hooks:
