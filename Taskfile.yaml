@@ -10,14 +10,16 @@ tasks:
   argo-up:
     cmds:
       - kubectl create namespace argocd
-      - kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+      - helm repo add argo https://argoproj.github.io/argo-helm
+      - helm install -n argocd argocd argo/argo-cd -f values/argocd/values-local.yaml
   argo-down:
     cmds:
-      - kubectl delete -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+      - helm uninstall -n argocd argocd
       - kubectl delete namespace argocd
   argo-pf:
     cmds:
-      - echo -n 'username:admin password:'
+      - echo 'username is admin'
+      - echo 'password is ...'
       - argocd admin initial-password -n argocd
       - kubectl port-forward svc/argocd-server -n argocd 8080:443
   deploy:
