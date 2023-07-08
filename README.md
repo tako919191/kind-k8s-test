@@ -8,6 +8,7 @@
 
 - [kind](https://kind.sigs.k8s.io/)
 - [taskfile.dev](https://taskfile.dev/)
+- [kubeconform](https://github.com/yannh/kubeconform)
 
 ## Usage
 
