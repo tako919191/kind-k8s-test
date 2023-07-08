@@ -11,7 +11,7 @@ repos:
     rev: 2.0.975
     hooks:
       - id: checkov
-        args: [-d .]
+        args: [-d ./charts/nginx --framework helm --var-file ./valurs/nginx/values-local.yaml]
   - repo: https://github.com/Agilicus/pre-commit-hook-k8svalidate.git
     rev: v0.0.8
     hooks:
