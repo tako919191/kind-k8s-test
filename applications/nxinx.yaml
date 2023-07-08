@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx
+  namespace: argocd
+spec:
+  project: default
+  source:
+    chart: nginx
+    repoURL: https://github.com/tako919191/kind-k8s-test.git
+    targetRevision: main
+    path: helm/nginx
+    helm:
+      releaseName: nginx
+      valueFiles:
+        - helm/values/nginx/values-local.yaml
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: nginx
