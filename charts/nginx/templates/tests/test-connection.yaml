@@ -9,7 +9,7 @@ metadata:
 spec:
   containers:
     - name: wget
-      image: busybox
+      image: busybox:stable
       command: ['wget']
       args: ['{{ include "nginx.fullname" . }}:{{ .Values.service.port }}']
   restartPolicy: Never
