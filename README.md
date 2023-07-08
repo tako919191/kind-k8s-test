@@ -8,3 +8,9 @@
 
 - [kind](https://kind.sigs.k8s.io/)
 - [taskfile.dev](https://taskfile.dev/)
+
+## Usage
+
+```
+$ task --list-all
+```
