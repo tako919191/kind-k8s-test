@@ -17,5 +17,12 @@ tasks:
       - kubectl delete namespace argocd
   argo-pf:
     cmds:
+      - echo -n 'username:admin password:'
       - argocd admin initial-password -n argocd
       - kubectl port-forward svc/argocd-server -n argocd 8080:443
+  deploy:
+    cmds:
+      - kubectl apply -f ./applications/*.yaml
+  delete:
+    cmds:
+      - kubectl delete -f ./applications/*.yaml

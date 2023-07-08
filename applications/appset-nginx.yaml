@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: application-nginx
+  namespace: argocd
+spec:
+  generators:
+  - list:
+      elements:
+      - cluster: local-kind
+        url: https://kubernetes.default.svc
+  template:
+    metadata:
+      name: nginx
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/tako919191/kind-k8s-test.git
+        targetRevision: main
+        path: helm/nginx
+      destination:
+        server: '{{ url }}'
+        namespace: nginx
+      syncPolicy:
+        syncOptions:
+        - CreateNamespace=true
