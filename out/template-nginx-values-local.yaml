@@ -71,7 +71,7 @@ spec:
               - ALL
             readOnlyRootFilesystem: true
             runAsNonRoot: true
-          image: "nginx:stable"
+          image: "nginx:latest"
           imagePullPolicy: Always
           ports:
             - name: http
