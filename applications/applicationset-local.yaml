@@ -22,7 +22,7 @@ spec:
       project: default
       source:
         repoURL: '{{ repo }}'
-        targetRevision: main
+        targetRevision: '{{ targetRevision }}'
         path: '{{ path }}'
         helm:
           releaseName: local
