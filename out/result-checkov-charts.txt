@@ -1,3 +1,0 @@
-helm scan results:
-
-Passed checks: 85, Failed checks: 0, Skipped checks: 0

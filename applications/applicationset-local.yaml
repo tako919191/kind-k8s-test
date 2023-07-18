@@ -8,7 +8,11 @@ spec:
     - list:
         elements:
           - app: nginx
-            env: local
+            path: charts/nginx
+            targetRevision: main
+          - app: mysql
+            path: charts/mysql
+            targetRevision: main
   template:
     metadata:
       name: '{{ app }}'
@@ -16,12 +20,12 @@ spec:
       project: default
       source:
         repoURL: https://github.com/tako919191/kind-k8s-test.git
-        targetRevision: main
-        path: 'charts/{{ app }}'
+        targetRevision: '{{ targetRevision }}'
+        path: '{{ path }}'
         helm:
-          releaseName: '{{ env }}'
+          releaseName: local
           valueFiles:
-            - '../../values/{{ app }}/values-{{ env }}.yaml'
+            - '../../values/{{ app }}/values-local.yaml'
       destination:
         server: https://kubernetes.default.svc
         namespace: '{{ app }}'

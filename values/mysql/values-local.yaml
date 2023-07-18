@@ -1,0 +1,11 @@
+image:
+  registry: docker.io
+  repository: bitnami/mysql
+  tag: 8.0.33-debian-11-r30
+  pullPolicy: IfNotPresent
+auth:
+  rootPassword: "password" # pragma: allowlist secret
+  createDatabase: true
+  database: "root"
+  username: "rails"
+  password: "password" # pragma: allowlist secret
