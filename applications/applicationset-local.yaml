@@ -8,20 +8,18 @@ spec:
     - list:
         elements:
           - app: nginx
-            repo: https://github.com/tako919191/kind-k8s-test.git
             path: charts/nginx
             targetRevision: 2-add-mysql-chart
           - app: mysql
-            repo: https://github.com/bitnami/charts.git
-            path: bitnami/mysql
-            targetRevision: main
+            path: charts/mysql
+            targetRevision: 2-add-mysql-chart
   template:
     metadata:
       name: '{{ app }}'
     spec:
       project: default
       source:
-        repoURL: '{{ repo }}'
+        repoURL: https://github.com/tako919191/kind-k8s-test.git
         targetRevision: '{{ targetRevision }}'
         path: '{{ path }}'
         helm:

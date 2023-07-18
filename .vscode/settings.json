@@ -1,0 +1,42 @@
+{
+  // Editor //
+  "editor.fontSize": 14,
+  "editor.renderWhitespace": "all",
+  "editor.renderLineHighlight": "all",
+  "editor.rulers": [40, 80, 120],
+  "editor.tabSize": 2,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.renderControlCharacters": true,
+  "editor.wordWrap": "on",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": false,
+
+  // Others //
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "search.showLineNumbers": true,
+  "workbench.iconTheme": "material-icon-theme",
+
+  // Markdown //
+  "[markdown]": {
+    "editor.quickSuggestions": {
+      "comments": "on",
+      "strings": "on",
+      "other": "on"
+    },
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+  },
+  "markdown.styles": [".vscode/style.css"],
+
+  // json //
+  "[json]": {
+    "editor.formatOnSave": true
+  },
+
+  // Makefile //
+  "[makefile]": {
+    "editor.insertSpaces": false,
+    "editor.detectIndentation": false,
+  },
+}

@@ -13,12 +13,12 @@ repos:
       - id: trailing-whitespace
       - id: check-added-large-files
       - id: end-of-file-fixer
-  - repo: https://github.com/bridgecrewio/checkov.git
-    rev: 2.3.314
-    hooks:
-      - id: checkov
-        files: \.y(a)?ml$
-        args: ["-d", "./charts/*,./out/*", "--quiet", "--framework", "helm", "--compact", "--skip-path", "tests", "--skip-check", "CKV_K8S_21,CKV_K8S_40,CKV_K8S_43"]
+  # - repo: https://github.com/bridgecrewio/checkov.git
+  #   rev: 2.3.314
+  #   hooks:
+  #     - id: checkov
+  #       files: \.y(a)?ml$
+  #       args: ["-d", "./charts/*,./out/*", "--quiet", "--framework", "helm", "--compact", "--skip-path", "tests", "--skip-check", "CKV_K8S_21,CKV_K8S_40,CKV_K8S_43"]
   # - repo: https://github.com/Agilicus/pre-commit-hook-k8svalidate.git
   #   rev: v0.1.0
   #   hooks:

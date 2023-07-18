@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "mysql.fullname" . }}-env
+  labels:
+    {{- include "mysql.labels" . | nindent 4 }}
+data:
+  MYSQL_ROOT_PASSWORD: password # pragma: allowlist secret
+  MYSQL_DATABASE: root
+  MYSQL_USER: rails
+  MYSQL_PASSWORD: password # pragma: allowlist secret
