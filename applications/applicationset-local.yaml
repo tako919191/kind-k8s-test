@@ -8,20 +8,26 @@ spec:
     - list:
         elements:
           - app: nginx
-            env: local
+            repo: https://github.com/tako919191/kind-k8s-test.git
+            path: charts/nginx
+            targetRevision: 2-add-mysql-chart
+          - app: mysql
+            repo: https://github.com/bitnami/charts.git
+            path: bitnami/mysql
+            targetRevision: main
   template:
     metadata:
       name: '{{ app }}'
     spec:
       project: default
       source:
-        repoURL: https://github.com/tako919191/kind-k8s-test.git
+        repoURL: '{{ repo }}'
         targetRevision: main
-        path: 'charts/{{ app }}'
+        path: '{{ path }}'
         helm:
-          releaseName: '{{ env }}'
+          releaseName: local
           valueFiles:
-            - '../../values/{{ app }}/values-{{ env }}.yaml'
+            - '../../values/{{ app }}/values-local.yaml'
       destination:
         server: https://kubernetes.default.svc
         namespace: '{{ app }}'
